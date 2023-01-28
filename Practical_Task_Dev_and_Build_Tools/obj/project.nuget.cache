@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YR5On8sqQYeR516XrpYqCljRYv7M1XPpccqr3twmCH+tIZB8lBn2d8sPAnuRf+MyIZZoKnrGzfNIfV7iqF/rCg==",
+  "dgSpecHash": "XY7ftoDqhZTTSfmwYjA6fX7Iv1VIv9htt5rdRKqRNNtM/RZj+HFHVuia8aKnepEN3jbU6rN95jEHcDkcN2MRDA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nagel\\source\\repos\\EPAM_education\\1_Practical_Task_Dev_and_Build_Tools\\Practical_Task_Dev_and_Build_Tools\\Practical_Task_Dev_and_Build_Tools.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\nagel\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\nagel\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
   ],
   "logs": []
 }

@@ -13,24 +13,8 @@ namespace StringLibrary
 {
     public class StringProcessing
     {
-        
-        JsonWriter writer;
-        public StringProcessing()
+        public int MaxNumUneqSym(string inputStr)
         {
-            StreamWriter logFile = File.CreateText("StringProcessing.json");
-            logFile.AutoFlush = true;
-            writer = new JsonTextWriter(logFile);
-            writer.Formatting = Newtonsoft.Json.Formatting.Indented;
-            writer.WriteStartObject();
-            writer.WritePropertyName("String Processings");
-            writer.WriteStartArray();
-        }
-        
-        public int DoProcessing(string inputStr)
-        {
-            writer.WriteStartObject();
-            writer.WritePropertyName("Input String");
-            writer.WriteValue(inputStr);
             int result = 0;
             int currNumberOfUneqCh = 0;
 
@@ -49,20 +33,47 @@ namespace StringLibrary
                     currNumberOfUneqCh = 0;
                 }
             }
-
-            writer.WritePropertyName("Result");
-            writer.WriteValue(result);
-            writer.WriteEndObject();
-
             return result;
         }
-        
-        public void Finish()
+        public int MaxNumEqLatinLetters(string inputStr)
         {
-            writer.WriteEndArray();
-            writer.WriteEndObject();
-            writer.Close();
+            int result = 0;
+
+            string latinLetters = "abcdefghijklmopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            result = MaxNumEqCh(inputStr, latinLetters);
+            return result;
         }
-        
+        public int MaxNumEqDigits(string inputStr)
+        {
+            int result = 0;
+
+            string digits = "1234567890";
+            result = MaxNumEqCh(inputStr, digits);
+            return result;
+        }
+
+        private int MaxNumEqCh(string inputStr, string setOfChars)
+        {
+            int result = 0;
+            int currNumberOfUneqCh = 0;
+
+            for (int i = 1; i < inputStr.Length; i++)
+            {
+                if (inputStr[i] == inputStr[i - 1] &&
+                    setOfChars.Contains(inputStr[i]))
+                {
+                    currNumberOfUneqCh++;
+                }
+                else
+                {
+                    if (result < currNumberOfUneqCh)
+                    {
+                        result = currNumberOfUneqCh;
+                    }
+                    currNumberOfUneqCh = 0;
+                }
+            }
+            return result;
+        }
     }
 }
