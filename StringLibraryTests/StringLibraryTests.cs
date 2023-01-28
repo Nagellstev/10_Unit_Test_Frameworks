@@ -11,9 +11,11 @@ namespace StringLibrary.Tests
     public class StringLibraryTests
     {
         [Theory()]
-        [InlineData("aaa", 0)]
+        [InlineData("aaa", 1)]
         [InlineData("aba", 3)]
-        [InlineData("aaabff", 3)]
+        [InlineData("aabff", 3)]
+        [InlineData("aabf", 3)]
+        [InlineData("abffff", 3)]
         public void MaxNumUneqSymTest(string input, int expected)
         {
             //Arrange
@@ -25,6 +27,7 @@ namespace StringLibrary.Tests
         }
         [Theory()]
         [InlineData("ffaaa", 3)]
+        [InlineData("ffaaab", 3)]
         [InlineData("aaa1111", 3)]
         [InlineData("1111", 0)]
         [InlineData("aaa", 3)]
@@ -33,7 +36,7 @@ namespace StringLibrary.Tests
             //Arrange
             var strPr = new StringProcessing();
             //Act
-            int result = strPr.MaxNumUneqSym(input);
+            int result = strPr.MaxNumEqLatinLetters(input);
             //Assert
             Assert.Equal(expected, result);
         }
@@ -47,7 +50,7 @@ namespace StringLibrary.Tests
             //Arrange
             var strPr = new StringProcessing();
             //Act
-            int result = strPr.MaxNumUneqSym(input);
+            int result = strPr.MaxNumEqDigits(input);
             //Assert
             Assert.Equal(expected, result);
         }

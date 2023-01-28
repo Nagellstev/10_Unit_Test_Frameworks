@@ -2,19 +2,7 @@
   "String Processings": [
     {
       "Input String": "aaa",
-      "Result": 0
-    },
-    {
-      "Input String": "aaas",
-      "Result": 2
-    },
-    {
-      "Input String": "qwer",
-      "Result": 0
-    },
-    {
-      "Input String": "111w",
-      "Result": 2
+      "Result": "0"
     }
   ]
 }

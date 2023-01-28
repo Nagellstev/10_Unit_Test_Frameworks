@@ -84,11 +84,7 @@ namespace CalculatorProgram
                             endSwitch = true;
                             break;
                         case "e":
-                            Console.WriteLine("Exit? y/n");
-                            if (Console.ReadLine() == "y")
-                            {
-                                endApp = true;
-                            }
+                            endApp = true;
                             endSwitch = true;
                             break;
                         default:

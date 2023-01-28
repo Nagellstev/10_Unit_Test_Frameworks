@@ -17,15 +17,17 @@ namespace StringLibrary
         {
             int result = 0;
             int currNumberOfUneqCh = 0;
+            inputStr = inputStr[0] + inputStr + inputStr[inputStr.Length - 1];
 
-            for (int i = 1; i < inputStr.Length; i++)
+            for (int i = 0; i < inputStr.Length - 1; i++)
             {
-                if (inputStr[i] != inputStr[i - 1])
+                if (inputStr[i] != inputStr[i + 1])
                 {
                     currNumberOfUneqCh++;
                 }
                 else
                 {
+                    currNumberOfUneqCh++;
                     if (result < currNumberOfUneqCh)
                     {
                         result = currNumberOfUneqCh;
@@ -56,22 +58,39 @@ namespace StringLibrary
         {
             int result = 0;
             int currNumberOfUneqCh = 0;
-
-            for (int i = 1; i < inputStr.Length; i++)
+            char firstCh = '.';
+            char lastCh = '.';
+            if (inputStr[0] == firstCh)
             {
-                if (inputStr[i] == inputStr[i - 1] &&
-                    setOfChars.Contains(inputStr[i]))
+                firstCh = ',';
+            }
+            if (inputStr[inputStr.Length - 1] == lastCh)
+            {
+                lastCh = ',';
+            }
+            inputStr = firstCh + inputStr + lastCh;
+            for (int i = 0; i < inputStr.Length - 1; i++)
+            {
+                if (inputStr[i] == inputStr[i + 1] )
                 {
-                    currNumberOfUneqCh++;
+                    result++;
                 }
                 else
                 {
-                    if (result < currNumberOfUneqCh)
+                    if (setOfChars.Contains(inputStr[i]))
                     {
-                        result = currNumberOfUneqCh;
+                        result++;
+                        if (currNumberOfUneqCh < result)
+                        {
+                            currNumberOfUneqCh = result;
+                        }
                     }
-                    currNumberOfUneqCh = 0;
+                    result = 0;
                 }
+            }
+            if (currNumberOfUneqCh > result)
+            {
+                result = currNumberOfUneqCh;
             }
             return result;
         }
