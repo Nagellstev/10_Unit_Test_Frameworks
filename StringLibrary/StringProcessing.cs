@@ -35,8 +35,10 @@ namespace StringLibrary
                     currNumberOfUneqCh = 0;
                 }
             }
+
             return result;
         }
+
         public int MaxNumEqLatinLetters(string inputStr)
         {
             int result = 0;
@@ -45,12 +47,14 @@ namespace StringLibrary
             result = MaxNumEqCh(inputStr, latinLetters);
             return result;
         }
+
         public int MaxNumEqDigits(string inputStr)
         {
             int result = 0;
-
             string digits = "1234567890";
+
             result = MaxNumEqCh(inputStr, digits);
+
             return result;
         }
 
@@ -60,15 +64,19 @@ namespace StringLibrary
             int currNumberOfUneqCh = 0;
             char firstCh = '.';
             char lastCh = '.';
+
             if (inputStr[0] == firstCh)
             {
                 firstCh = ',';
             }
+
             if (inputStr[inputStr.Length - 1] == lastCh)
             {
                 lastCh = ',';
             }
+
             inputStr = firstCh + inputStr + lastCh;
+
             for (int i = 0; i < inputStr.Length - 1; i++)
             {
                 if (inputStr[i] == inputStr[i + 1] )
@@ -88,10 +96,12 @@ namespace StringLibrary
                     result = 0;
                 }
             }
+
             if (currNumberOfUneqCh > result)
             {
                 result = currNumberOfUneqCh;
             }
+
             return result;
         }
     }

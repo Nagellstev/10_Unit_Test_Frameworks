@@ -25,6 +25,7 @@ namespace StringLibrary.Tests
             //Assert
             Assert.Equal(expected, result);
         }
+
         [Theory()]
         [InlineData("ffaaa", 3)]
         [InlineData("ffaaab", 3)]
@@ -40,6 +41,7 @@ namespace StringLibrary.Tests
             //Assert
             Assert.Equal(expected, result);
         }
+
         [Theory()]
         [InlineData("111aaaa", 3)]
         [InlineData("1112222", 4)]
