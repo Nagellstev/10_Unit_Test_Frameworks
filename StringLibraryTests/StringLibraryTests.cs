@@ -16,12 +16,12 @@ namespace StringLibrary.Tests
         [InlineData("aabff", 3)]
         [InlineData("aabf", 3)]
         [InlineData("abffff", 3)]
-        public void MaxNumUneqSymTest(string input, int expected)
+        public void MaxNumberUnequalSymbolsTest(string input, int expected)
         {
             //Arrange
             var strPr = new StringProcessing();
             //Act
-            int result = strPr.MaxNumUneqSym(input);
+            int result = strPr.MaxNumberUnequalSymbols(input);
             //Assert
             Assert.Equal(expected, result);
         }
@@ -32,12 +32,12 @@ namespace StringLibrary.Tests
         [InlineData("aaa1111", 3)]
         [InlineData("1111", 0)]
         [InlineData("aaa", 3)]
-        public void MaxNumEqLatinLettersTest(string input, int expected)
+        public void MaxNumberEqualLatinLettersTest(string input, int expected)
         {
             //Arrange
             var strPr = new StringProcessing();
             //Act
-            int result = strPr.MaxNumEqLatinLetters(input);
+            int result = strPr.MaxNumberEqualLatinLetters(input);
             //Assert
             Assert.Equal(expected, result);
         }
@@ -47,12 +47,12 @@ namespace StringLibrary.Tests
         [InlineData("1112222", 4)]
         [InlineData("aaa", 0)]
         [InlineData("333", 3)]
-        public void MaxNumEqDigitsTest(string input, int expected)
+        public void MaxNumberEqualDigitsTest(string input, int expected)
         {
             //Arrange
             var strPr = new StringProcessing();
             //Act
-            int result = strPr.MaxNumEqDigits(input);
+            int result = strPr.MaxNumberEqualDigits(input);
             //Assert
             Assert.Equal(expected, result);
         }

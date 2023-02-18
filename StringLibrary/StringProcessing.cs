@@ -13,93 +13,98 @@ namespace StringLibrary
 {
     public class StringProcessing
     {
-        public int MaxNumUneqSym(string inputStr)
+        public int MaxNumberUnequalSymbols(string inputString)
         {
             int result = 0;
-            int currNumberOfUneqCh = 0;
-            inputStr = inputStr[0] + inputStr + inputStr[inputStr.Length - 1];
+            int currentNumberOfUnequalCharacters = 0;
 
-            for (int i = 0; i < inputStr.Length - 1; i++)
+            inputString = inputString[0] + inputString + inputString[inputString.Length - 1];
+
+            for (int i = 0; i < inputString.Length - 1; i++)
             {
-                if (inputStr[i] != inputStr[i + 1])
+                if (inputString[i] != inputString[i + 1])
                 {
-                    currNumberOfUneqCh++;
+                    currentNumberOfUnequalCharacters++;
                 }
                 else
                 {
-                    currNumberOfUneqCh++;
-                    if (result < currNumberOfUneqCh)
+                    currentNumberOfUnequalCharacters++;
+
+                    if (result < currentNumberOfUnequalCharacters)
                     {
-                        result = currNumberOfUneqCh;
+                        result = currentNumberOfUnequalCharacters;
                     }
-                    currNumberOfUneqCh = 0;
+
+                    currentNumberOfUnequalCharacters = 0;
                 }
             }
 
             return result;
         }
 
-        public int MaxNumEqLatinLetters(string inputStr)
+        public int MaxNumberEqualLatinLetters(string inputString)
         {
             int result = 0;
 
             string latinLetters = "abcdefghijklmopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            result = MaxNumEqCh(inputStr, latinLetters);
+            result = MaxNumberEqualChars(inputString, latinLetters);
             return result;
         }
 
-        public int MaxNumEqDigits(string inputStr)
+        public int MaxNumberEqualDigits(string inputString)
         {
             int result = 0;
             string digits = "1234567890";
 
-            result = MaxNumEqCh(inputStr, digits);
+            result = MaxNumberEqualChars(inputString, digits);
 
             return result;
         }
 
-        private int MaxNumEqCh(string inputStr, string setOfChars)
+        private int MaxNumberEqualChars(string inputString, string setOfChars)
         {
             int result = 0;
-            int currNumberOfUneqCh = 0;
-            char firstCh = '.';
-            char lastCh = '.';
+            int currentNumberOfUnequalCharacters = 0;
+            char firstChar = '.';
+            char lastChar = '.';
 
-            if (inputStr[0] == firstCh)
+            if (inputString[0] == firstChar)
             {
-                firstCh = ',';
+                firstChar = ',';
             }
 
-            if (inputStr[inputStr.Length - 1] == lastCh)
+            if (inputString[inputString.Length - 1] == lastChar)
             {
-                lastCh = ',';
+                lastChar = ',';
             }
 
-            inputStr = firstCh + inputStr + lastCh;
+            inputString = firstChar + inputString + lastChar;
 
-            for (int i = 0; i < inputStr.Length - 1; i++)
+            for (int i = 0; i < inputString.Length - 1; i++)
             {
-                if (inputStr[i] == inputStr[i + 1] )
+                if (inputString[i] == inputString[i + 1] )
                 {
                     result++;
                 }
                 else
                 {
-                    if (setOfChars.Contains(inputStr[i]))
+                    if (setOfChars.Contains(inputString[i]))
                     {
                         result++;
-                        if (currNumberOfUneqCh < result)
+
+                        if (currentNumberOfUnequalCharacters < result)
                         {
-                            currNumberOfUneqCh = result;
+                            currentNumberOfUnequalCharacters = result;
                         }
                     }
+
                     result = 0;
                 }
             }
 
-            if (currNumberOfUneqCh > result)
+            if (currentNumberOfUnequalCharacters > result)
             {
-                result = currNumberOfUneqCh;
+                result = currentNumberOfUnequalCharacters;
             }
 
             return result;

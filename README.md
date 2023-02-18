@@ -1,4 +1,4 @@
-# 10_Unit_Test_Frameworks
+# Course11.UnitTestFrameworks
 In previous Practical Task
 
 Create a program that takes a sequence of symbols (string) as arguments from the command line 

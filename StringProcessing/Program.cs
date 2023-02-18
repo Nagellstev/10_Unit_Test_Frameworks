@@ -43,15 +43,15 @@ namespace CalculatorProgram
                             try
                             {
                                 Jwriter.StartJsonPartition(Input);
-                                result = strPr.MaxNumUneqSym(Input);
-                                Console.WriteLine("Maximum number of unequal consecutive characters in this line is \n" + result);
+                                result = strPr.MaxNumberUnequalSymbols(Input);
+                                Console.WriteLine($"Maximum number of unequal consecutive characters in this line is \n {result}");
                                 Jwriter.EndJsonPartition(result.ToString());
                             }
-                            catch (Exception e)
+                            catch (Exception exeption)
                             {
                                 Jwriter.StartJsonPartition(Input);
-                                Console.WriteLine("Something Wrong!\n" + e.Message);
-                                Jwriter.EndJsonPartition("Something Wrong!\n" + e.Message);
+                                Console.WriteLine($"Something Wrong!\n {exeption.Message}");
+                                Jwriter.EndJsonPartition($"Something Wrong!\n {exeption.Message}");
                             }
 
                             endSwitch = true;
@@ -62,14 +62,14 @@ namespace CalculatorProgram
                             try
                             {
                                 Jwriter.StartJsonPartition(Input);
-                                result = strPr.MaxNumEqLatinLetters(Input);
-                                Console.WriteLine("Maximum number of consecutive identical latin letters in this line is \n" + result);
+                                result = strPr.MaxNumberEqualLatinLetters(Input);
+                                Console.WriteLine($"Maximum number of consecutive identical latin letters in this line is \n {result}");
                                 Jwriter.EndJsonPartition(result.ToString());
                             }
-                            catch (Exception e)
+                            catch (Exception exeption)
                             {
                                 Jwriter.StartJsonPartition(Input);
-                                Console.WriteLine("Something Wrong!\n" + e.Message);
+                                Console.WriteLine($"Something Wrong!\n {exeption.Message}");
                                 Jwriter.EndJsonPartition(result.ToString());
                             }
 
@@ -81,14 +81,14 @@ namespace CalculatorProgram
                             try
                             {
                                 Jwriter.StartJsonPartition(Input);
-                                result = strPr.MaxNumEqDigits(Input);
-                                Console.WriteLine("Maximum number of consecutive identical digits in this line is \n" + result);
+                                result = strPr.MaxNumberEqualDigits(Input);
+                                Console.WriteLine($"Maximum number of consecutive identical digits in this line is \n {result}");
                                 Jwriter.EndJsonPartition(result.ToString());
                             }
-                            catch (Exception e)
+                            catch (Exception exeption)
                             {
                                 Jwriter.StartJsonPartition(Input);
-                                Console.WriteLine("Something Wrong!\n" + e.Message);
+                                Console.WriteLine($"Something Wrong!\n {exeption.Message}");
                                 Jwriter.EndJsonPartition(result.ToString());
                             }
 
